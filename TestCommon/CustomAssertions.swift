@@ -6,7 +6,7 @@ import XCTest
 public func XCTAssertThrowsFatalError(_ expression: @escaping () -> Void,
                                file: StaticString = #file,
                                line: UInt = #line) throws {
-    #if (os(iOS)) && arch(x86_64)
+    #if (os(iOS)) && (arch(arm64) || arch(x86_64))
     var reached = false
     let exception = catchBadInstruction {
         expression()
