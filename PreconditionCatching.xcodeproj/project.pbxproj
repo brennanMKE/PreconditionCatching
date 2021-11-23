@@ -47,6 +47,7 @@
 		265B3E10274C8A2D00883DCE /* TestCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCommon.h; sourceTree = "<group>"; };
 		265B3E15274C8A4C00883DCE /* CustomAssertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAssertions.swift; sourceTree = "<group>"; };
 		265B3E33274D68E200883DCE /* Build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
+		265B3E34274D6B8300883DCE /* PreconditionCatchingTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreconditionCatchingTestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,7 @@
 		265B3DF5274C6F1000883DCE /* PreconditionCatchingTests */ = {
 			isa = PBXGroup;
 			children = (
+				265B3E34274D6B8300883DCE /* PreconditionCatchingTestPlan.xctestplan */,
 				265B3DF6274C6F1000883DCE /* PreconditionCatchingTests.swift */,
 			);
 			path = PreconditionCatchingTests;
