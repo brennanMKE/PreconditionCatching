@@ -4,17 +4,52 @@ import TestCommon
 
 class PreconditionCatchingTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testRunnerWithoutFatalError() throws {
+            let runner = Runner()
+            try XCTAssertNoThrowFatalError({ runner.run(behavior: .ok) })
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testRunnerWithFatalError() throws {
+            let runner = Runner()
+            try XCTAssertThrowFatalError({ runner.run(behavior: .fatalError) })
     }
 
-    func testRunner() throws {
+    func testRunnerOnMain() throws {
         let runner = Runner()
-        try XCTAssertThrowsFatalError({ runner.run() })
+        let exp = expectation(description: #function)
+        DispatchQueue.global().async {
+            do {
+                try XCTAssertThrowFatalError({ runner.run(behavior: .dispatchPreconditionOnMain) })
+                exp.fulfill()
+            } catch {
+                XCTFail()
+            }
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
+
+    func testRunnerOffMain() throws {
+        let runner = Runner()
+        let exp = expectation(description: #function)
+        DispatchQueue.main.async {
+            do {
+                try XCTAssertThrowFatalError({ runner.run(behavior: .dispatchPreconditionOffMain) })
+                exp.fulfill()
+            } catch {
+                XCTFail()
+            }
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
+
+    func testRunnerWithPrecondition() throws {
+        let runner = Runner()
+        try XCTAssertThrowFatalError({ runner.run(behavior: .precondition) })
+    }
+
+    func testRunnerWithPreconditionFailure() throws {
+        let runner = Runner()
+        try XCTAssertThrowFatalError({ runner.run(behavior: .preconditionFailure) })
     }
 
 }

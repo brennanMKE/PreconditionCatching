@@ -23,3 +23,8 @@ SYSTEM_FRAMEWORK_SEARCH_PATHS = $(CORRESPONDING_DEVICE_PLATFORM_DIR)/Developer/L
 [Writing ARM64 Code for Apple Platforms]: https://developer.apple.com/documentation/xcode/writing-arm64-code-for-apple-platforms
 [Kernel Structures]: https://developer.apple.com/documentation/kernel/kernel_structures
 [Learn the architecture: AArch64 Instruction Set Architecture]: https://developer.arm.com/documentation/102374/0101/Registers-in-AArch64---other-registers
+[Setting up a Mach exception handler without interfering with LLDB]: https://stackoverflow.com/questions/63137036/ios-setting-up-a-mach-exception-handler-without-interfering-with-lldb
+[XCTAssertCrash]: https://github.com/norio-nomura/XCTAssertCrash
+[Partial functions in Swift, Part 1: Avoidance]: https://www.cocoawithlove.com/blog/2016/01/25/partial-functions-part-one-avoidance.html
+[Partial functions in Swift, Part 2: Catching precondition failures]: https://www.cocoawithlove.com/blog/2016/02/02/partial-functions-part-two-catching-precondition-failures.html
+[Trapping Signals With Swift On Linux]: https://dev.iachieved.it/iachievedit/trapping-signals-with-swift-on-linux/
