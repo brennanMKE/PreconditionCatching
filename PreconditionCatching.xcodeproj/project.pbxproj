@@ -11,7 +11,7 @@
 		265B3DF7274C6F1000883DCE /* PreconditionCatchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B3DF6274C6F1000883DCE /* PreconditionCatchingTests.swift */; };
 		265B3DF8274C6F1000883DCE /* PreconditionCatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 265B3DEC274C6F1000883DCE /* PreconditionCatching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2694FB67274EF60200C00621 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694FB66274EF60200C00621 /* Runner.swift */; };
-		2694FB6A274EF67F00C00621 /* Hela in Frameworks */ = {isa = PBXBuildFile; productRef = 2694FB69274EF67F00C00621 /* Hela */; };
+		269820A4275424380059320E /* Hela in Frameworks */ = {isa = PBXBuildFile; productRef = 269820A3275424380059320E /* Hela */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,9 +31,7 @@
 		265B3DF6274C6F1000883DCE /* PreconditionCatchingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreconditionCatchingTests.swift; sourceTree = "<group>"; };
 		265B3E08274C8A0300883DCE /* TestCommon.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TestCommon.xcconfig; sourceTree = "<group>"; };
 		265B3E33274D68E200883DCE /* Build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
-		265B3E34274D6B8300883DCE /* PreconditionCatchingTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreconditionCatchingTestPlan.xctestplan; sourceTree = "<group>"; };
 		2694FB66274EF60200C00621 /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
-		2698207227541CC00059320E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2694FB6A274EF67F00C00621 /* Hela in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269820A4275424380059320E /* Hela in Frameworks */,
 				265B3DF2274C6F1000883DCE /* PreconditionCatching.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,7 +87,6 @@
 		265B3DF5274C6F1000883DCE /* PreconditionCatchingTests */ = {
 			isa = PBXGroup;
 			children = (
-				265B3E34274D6B8300883DCE /* PreconditionCatchingTestPlan.xctestplan */,
 				265B3DF6274C6F1000883DCE /* PreconditionCatchingTests.swift */,
 			);
 			path = PreconditionCatchingTests;
@@ -98,7 +95,6 @@
 		265B3E1B274C8E0D00883DCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2698207227541CC00059320E /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,7 +128,6 @@
 			);
 			name = PreconditionCatching;
 			packageProductDependencies = (
-				2694FB69274EF67F00C00621 /* Hela */,
 			);
 			productName = PreconditionCatching;
 			productReference = 265B3DE9274C6F1000883DCE /* PreconditionCatching.framework */;
@@ -154,6 +149,7 @@
 			);
 			name = PreconditionCatchingTests;
 			packageProductDependencies = (
+				269820A3275424380059320E /* Hela */,
 			);
 			productName = PreconditionCatchingTests;
 			productReference = 265B3DF1274C6F1000883DCE /* PreconditionCatchingTests.xctest */;
@@ -188,7 +184,6 @@
 			);
 			mainGroup = 265B3DDF274C6F1000883DCE;
 			packageReferences = (
-				2694FB68274EF67F00C00621 /* XCRemoteSwiftPackageReference "Hela" */,
 			);
 			productRefGroup = 265B3DEA274C6F1000883DCE /* Products */;
 			projectDirPath = "";
@@ -513,25 +508,13 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		2694FB68274EF67F00C00621 /* XCRemoteSwiftPackageReference "Hela" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/brennanMKE/Hela";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		2694FB62274EF5E700C00621 /* Hela */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Hela;
 		};
-		2694FB69274EF67F00C00621 /* Hela */ = {
+		269820A3275424380059320E /* Hela */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2694FB68274EF67F00C00621 /* XCRemoteSwiftPackageReference "Hela" */;
 			productName = Hela;
 		};
 /* End XCSwiftPackageProductDependency section */
