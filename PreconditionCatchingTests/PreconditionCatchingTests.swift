@@ -1,6 +1,6 @@
 import XCTest
-import TestCommon
 @testable import PreconditionCatching
+@testable import Hela
 
 class PreconditionCatchingTests: XCTestCase {
 
@@ -17,29 +17,39 @@ class PreconditionCatchingTests: XCTestCase {
     func testRunnerOnMain() throws {
         let runner = Runner()
         let exp = expectation(description: #function)
+        var thrownError: Error? = nil
         DispatchQueue.global().async {
             do {
                 try XCTAssertThrowFatalError({ runner.run(behavior: .dispatchPreconditionOnMain) })
-                exp.fulfill()
             } catch {
-                XCTFail()
+                thrownError = error
             }
+            exp.fulfill()
         }
         wait(for: [exp], timeout: 1.0)
+
+        if let error = thrownError {
+            throw error
+        }
     }
 
     func testRunnerOffMain() throws {
         let runner = Runner()
         let exp = expectation(description: #function)
+        var thrownError: Error? = nil
         DispatchQueue.main.async {
             do {
                 try XCTAssertThrowFatalError({ runner.run(behavior: .dispatchPreconditionOffMain) })
-                exp.fulfill()
             } catch {
-                XCTFail()
+                thrownError = error
             }
+            exp.fulfill()
         }
         wait(for: [exp], timeout: 1.0)
+
+        if let error = thrownError {
+            throw error
+        }
     }
 
     func testRunnerWithPrecondition() throws {
